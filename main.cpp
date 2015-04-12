@@ -5,6 +5,9 @@
 
 #include<GL/glut.h>
 
+#include "headers/camera.h"
+
+
 #define PI (2*acos(0))
 
 double cameraHeight;
@@ -77,79 +80,6 @@ void drawGrid()
 
 
 
-
-void drawPipe(float startZ, float endZ, int slices, int stacks, float radius, float startGray, float endGray){
-
-
-    float i, z, x, y, fraction, angle;
-
-    float zStep = (endZ - startZ) / (float)stacks;
-
-    for(z = startZ; z<=endZ; z+= zStep){
-
-        fraction = (z-startZ) / (endZ - startZ);
-
-
-        glColor3f(fraction * (endGray - startGray), fraction * (endGray - startGray), fraction * (endGray - startGray));
-
-        for(i=0; i<slices; ++i){
-
-            angle = i / slices * 2 * PI;
-
-
-            glBegin(GL_QUADS);{
-				glVertex3f(radius * cos(i / slices * 2 * PI), radius * sin(i / slices * 2 * PI), z );
-				glVertex3f(radius * cos((i+1) / slices * 2 * PI), radius * sin((i+1) / slices * 2 * PI), z );
-				glVertex3f(radius * cos((i+1) / slices * 2 * PI), radius * sin((i+1) / slices * 2 * PI), z + zStep);
-				glVertex3f(radius * cos(i / slices * 2 * PI), radius * sin(i / slices * 2 * PI), z + zStep );
-
-			}glEnd();
-        }
-
-
-
-    }
-
-
-}
-
-
-void drawBeenMidHalf(float radius,int slices,int stacks)
-{
-	struct point points[100][100];
-	int i,j;
-	double h,r, color;
-	for(i=0;i<=stacks;i++)
-	{
-		h=i;
-		r=10.0*exp((-h*h)*0.002);
-		for(j=0;j<=slices;j++)
-		{
-			points[i][j].x=r*cos(((double)j/(double)slices)*2*PI);
-			points[i][j].y=r*sin(((double)j/(double)slices)*2*PI);
-			points[i][j].z=h;
-		}
-
-	}
-	for(i=0;i<stacks;i++)
-	{
-		for(j=0;j<slices;j++)
-		{
-
-		    color = 0.4 + (j%2)*0.5;
-
-			glColor3f(color,color,color);
-			glBegin(GL_QUADS);{
-				glVertex3f(points[i][j].x,points[i][j].y,points[i][j].z);
-				glVertex3f(points[i][j+1].x,points[i][j+1].y,points[i][j+1].z);
-				glVertex3f(points[i+1][j+1].x,points[i+1][j+1].y,points[i+1][j+1].z);
-				glVertex3f(points[i+1][j].x,points[i+1][j].y,points[i+1][j].z);
-
-			}glEnd();
-		}
-
-	}
-}
 
 
 void keyboardListener(unsigned char key, int x,int y){
@@ -247,8 +177,10 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(100*cos(cameraAngle), 100*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
+	//gluLookAt(100*cos(cameraAngle), 100*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
+
+	positionCamera();
 
 
 	//again select MODEL-VIEW
@@ -335,6 +267,8 @@ int main(int argc, char **argv){
 	glutKeyboardFunc(keyboardListener);
 	glutSpecialFunc(specialKeyListener);
 	glutMouseFunc(mouseListener);
+
+	initCamera();
 
 	glutMainLoop();		//The main loop of OpenGL
 
