@@ -45,6 +45,7 @@
 		<Unit filename="headers/camera.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="headers/texture.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

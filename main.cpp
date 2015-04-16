@@ -5,10 +5,14 @@
 
 #include<GL/glut.h>
 
+
+#include "headers/utils.h"
+
 #include "headers/camera.h"
+#include "headers/texture.h"
+#include "headers/blocks.h"
 
 
-#define PI (2*acos(0))
 
 double cameraHeight;
 double cameraAngle;
@@ -16,11 +20,6 @@ int drawgrid;
 int drawaxes;
 double angle;
 double zRotation;
-
-struct point
-{
-	double x,y,z;
-};
 
 
 void drawAxes()
@@ -177,10 +176,10 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	//gluLookAt(100*cos(cameraAngle), 100*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
+	gluLookAt(30*cos(cameraAngle), 30*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
-	positionCamera();
+//	positionCamera();
 
 
 	//again select MODEL-VIEW
@@ -196,17 +195,21 @@ void display(){
 
 	drawAxes();
 	drawGrid();
-	glColor3f(1,0,0);
+	glColor3f(1,1,1);
+
+
+
+    drawBaseLevel0();
+
+
+ //   applyTexture(tex_base_shops, 2,1, 0,0,0, 2,0,0, 2,1,0, 0,1,0);
 
 
 //    drawPipe(20,70,10,40,5,0.5,0.9);
  //   drawPipe(-50,-20,10,40,5,0.5,0.9);
 
 
-    glRotatef(zRotation,0,0,1);
-	drawBeenMidHalf(20,69,70);
-	glRotatef(180,1,0,0);
-	drawBeenMidHalf(20,69,70);
+
 
 
 	//ADD this line in the end --- if you use double buffer (i.e. GL_DOUBLE)
@@ -267,6 +270,9 @@ int main(int argc, char **argv){
 	glutKeyboardFunc(keyboardListener);
 	glutSpecialFunc(specialKeyListener);
 	glutMouseFunc(mouseListener);
+
+
+	loadAllBitmap();
 
 	initCamera();
 
