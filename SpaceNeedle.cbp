@@ -42,10 +42,16 @@
 			<Add library="gdi32" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
 		</Linker>
+		<Unit filename="bin/Debug/a.bmp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="bin/Debug/base_shops.bmp" />
+		<Unit filename="headers/blocks.h" />
 		<Unit filename="headers/camera.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="headers/texture.h" />
+		<Unit filename="headers/utils.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -89,7 +89,12 @@ int tex_base_shops,
     tex_rod,
     tex_marble_tile,
     tex_base_upper_balcony,
-    tex_base_roof;
+    tex_base_roof,
+    tex_base1_0,
+    tex_base1_1,
+    tex_base1_2,
+    tex_base_2_0,
+    tex_base_3_0;
 
 
 void loadAllBitmap(){
@@ -100,6 +105,11 @@ void loadAllBitmap(){
     tex_base_upper_balcony = loadTexture("base_upper_balcony.bmp");
     tex_base_roof = loadTexture("base_roof.bmp");
 
+    tex_base1_0 = loadTexture("base1_0.bmp");
+    tex_base1_1 = loadTexture("base1_1.bmp");
+    tex_base1_2 = loadTexture("base1_2.bmp");
+    tex_base_2_0 = loadTexture("base_2_0.bmp");
+    tex_base_3_0 = loadTexture("base_3_0.bmp");
 
 }
 

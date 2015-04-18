@@ -176,7 +176,7 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(30*cos(cameraAngle), 30*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
+	gluLookAt(40*cos(cameraAngle), 40*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
 //	positionCamera();
@@ -201,12 +201,15 @@ void display(){
 
     drawBaseLevel0();
 
+    glPushMatrix();
 
- //   applyTexture(tex_base_shops, 2,1, 0,0,0, 2,0,0, 2,1,0, 0,1,0);
+        glTranslatef(0,0,3.71);
+        drawBaseLevel1();
 
+    glPopMatrix();
 
-//    drawPipe(20,70,10,40,5,0.5,0.9);
- //   drawPipe(-50,-20,10,40,5,0.5,0.9);
+    drawBaseLevel2();
+
 
 
 

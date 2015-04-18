@@ -3,24 +3,25 @@
 void drawBaseLevel0(){
 
 
+
+    //side
+    applyTexture(tex_base_shops, 1,1,
+
+                    17.1 , 0, 0,
+                     23.1 , 0, 0,
+                     23.1  , 0, 3.71,
+                     17.1  , 0, 3.71
+                     );
+
     for(int angle = 0; angle < 210; angle+= 15 ){
 
 
-    applyTexture(tex_base_shops, 1,1,
+    applyTexture(tex_base_shops,1,1,
 
-                     17.1 * cos(toRadian(0)) , 17.1 * sin(toRadian(0)), 0,
-                     23.1 * cos(toRadian(0)) , 23.1 * sin(toRadian(0)), 0,
-                     23.1 * cos(toRadian(0)) , 23.1 * sin(toRadian(0)), 3.71,
-                     17.1 * cos(toRadian(0)) , 17.1 * sin(toRadian(0)), 3.71
-                     );
-
-
-    applyTexture(tex_base_shops, 1,1,
-
-                     17.1 * cos(toRadian(angle)) , 17.1 * sin(toRadian(angle)), 0,
-                     17.1 * cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 0,
-                     17.1 * cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 3.71,
-                     17.1 * cos(toRadian(angle)) , 17.1 * sin(toRadian(angle)), 3.71
+                     17.2 * cos(toRadian(angle)) , 17.2 * sin(toRadian(angle)), 0,
+                     17.2 * cos(toRadian(angle+15)) , 17.2 * sin(toRadian(angle+15)), 0,
+                     17.2 * cos(toRadian(angle+15)) , 17.2 * sin(toRadian(angle+15)), 3.71,
+                     17.2 * cos(toRadian(angle)) , 17.2 * sin(toRadian(angle)), 3.71
                      );
 
 
@@ -67,10 +68,10 @@ void drawBaseLevel0(){
      //small R 1
      applyTexture(tex_base_shops, 1,1,
 
-                     17.1 * cos(toRadian(240)) , 17.1 * sin(toRadian(240)), 0,
-                     17.1 * cos(toRadian(255)) , 17.1 * sin(toRadian(255)), 0,
-                     17.1 * cos(toRadian(255)) , 17.1 * sin(toRadian(255)), 3.71,
-                     17.1 * cos(toRadian(240)) , 17.1 * sin(toRadian(240)), 3.71
+                     17.2 * cos(toRadian(240)) , 17.2 * sin(toRadian(240)), 0,
+                     17.2 * cos(toRadian(255)) , 17.2 * sin(toRadian(255)), 0,
+                     17.2 * cos(toRadian(255)) , 17.2 * sin(toRadian(255)), 3.71,
+                     17.2 * cos(toRadian(240)) , 17.2 * sin(toRadian(240)), 3.71
                      );
 
 
@@ -144,6 +145,103 @@ void drawBaseLevel0(){
     }
     glPopMatrix();
 
+
+
+}
+
+
+void drawBaseLevel1(){
+
+
+
+
+    for(int angle = 0; angle < 255; angle+= 15 ){
+
+    int tex = tex_base1_0 + (angle/15)%3;
+
+     applyTexture(tex, 1,1,
+
+                     23.1 * cos(toRadian(angle)) , 23.1 * sin(toRadian(angle)), 0,
+                     23.1 * cos(toRadian(angle+15)) , 23.1 * sin(toRadian(angle+15)), 0,
+                     23.1 * cos(toRadian(angle+15)) , 23.1 * sin(toRadian(angle+15)), 4.71,
+                     23.1 * cos(toRadian(angle)) , 23.1 * sin(toRadian(angle)), 4.71
+                     );
+
+    applyTexture(tex_base_roof, 1,2,
+
+                     17.1 * cos(toRadian(angle)), 17.1 * sin(toRadian(angle)), 0,
+                     23.1 * cos(toRadian(angle)),23.1 * sin(toRadian(angle)), 0,
+                     23.1 *cos(toRadian(angle+15)) , 23.1 * sin(toRadian(angle+15)), 0,
+                     17.1 *cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 0
+                     );
+
+
+    applyTexture(tex_base_roof, 1,2,
+
+
+                     17.1 * cos(toRadian(angle)), 17.1 * sin(toRadian(angle)), 4.71,
+                     23.1 * cos(toRadian(angle)),23.1 * sin(toRadian(angle)), 4.71,
+                     23.1 *cos(toRadian(angle+15)) , 23.1 * sin(toRadian(angle+15)), 4.71,
+                     17.1 *cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 4.71
+                     );
+
+
+     }
+
+
+     //side
+    applyTexture(tex_base_shops, 1,1,
+
+                     17.1 * cos(toRadian(0)) , 17.1 * sin(toRadian(0)), 0,
+                     23.1 * cos(toRadian(0)) , 23.1 * sin(toRadian(0)), 0,
+                     23.1 * cos(toRadian(0)) , 23.1 * sin(toRadian(0)), 4.71,
+                     17.1 * cos(toRadian(0)) , 17.1 * sin(toRadian(0)), 4.71
+                     );
+
+    //side
+    applyTexture(tex_base_shops, 1,1,
+
+                     17.1 * cos(toRadian(255)) , 17.1 * sin(toRadian(255)), 0,
+                     23.1 * cos(toRadian(255)) , 23.1 * sin(toRadian(255)), 0,
+                     23.1 * cos(toRadian(255)) , 23.1 * sin(toRadian(255)), 4.71,
+                     17.1 * cos(toRadian(255)) , 17.1 * sin(toRadian(255)), 4.71
+                     );
+}
+
+void drawBaseLevel2(){
+
+    for(int angle = 0; angle < 360; angle+= 15 ){
+
+
+    // wall
+    applyTexture(tex_base_2_0,1,1,
+
+                     17.1 * cos(toRadian(angle)) , 17.1 * sin(toRadian(angle)), 0,
+                     17.1 * cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 0,
+                     17.1 * cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 11.81,
+                     17.1 * cos(toRadian(angle)) , 17.1 * sin(toRadian(angle)), 11.81
+                     );
+
+    //roof
+    applyTexture(tex_base_roof, 1,2,
+                     17.1 * cos(toRadian(angle)), 17.1 * sin(toRadian(angle)), 11.81,
+                     15.7 * cos(toRadian(angle)),15.7 * sin(toRadian(angle)), 11.81,
+                     15.7 *cos(toRadian(angle+15)) , 15.7 * sin(toRadian(angle+15)), 11.81,
+                     17.1 *cos(toRadian(angle+15)) , 17.1 * sin(toRadian(angle+15)), 11.81
+                     );
+
+
+    // upper wall
+    applyTexture(tex_base_3_0,1,2,
+
+                     15.7 * cos(toRadian(angle)) , 15.7 * sin(toRadian(angle)), 14.81,
+                     15.7 * cos(toRadian(angle+15)) , 15.7 * sin(toRadian(angle+15)), 14.81,
+                     15.7 * cos(toRadian(angle+15)) , 15.7 * sin(toRadian(angle+15)), 11.81,
+                     15.7 * cos(toRadian(angle)) , 15.7 * sin(toRadian(angle)), 11.81
+                     );
+
+
+    }
 
 
 }
