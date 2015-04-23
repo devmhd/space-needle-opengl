@@ -214,6 +214,29 @@ void display(){
 
 
 
+    drawPartBaseRoof();
+    glPushMatrix();
+        glRotatef(120,0,0,1);
+        drawPartBaseRoof();
+        glRotatef(120,0,0,1);
+        drawPartBaseRoof();
+
+    glPopMatrix();
+
+
+
+
+    glPushMatrix();
+
+        glRotatef(60,0,0,1);
+        drawAnglePillars();
+        glRotatef(120,0,0,1);
+        drawAnglePillars();
+        glRotatef(120,0,0,1);
+        drawAnglePillars();
+     glPopMatrix();
+
+
 
 	//ADD this line in the end --- if you use double buffer (i.e. GL_DOUBLE)
 	glutSwapBuffers();

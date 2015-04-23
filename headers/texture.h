@@ -24,7 +24,7 @@ int loadTexture(char *filename)
     fseek(l_file, sizeof(fileheader), SEEK_SET);
     fread(&infoheader, sizeof(infoheader), 1, l_file);
 
-    printf("%d x %d\n", infoheader.biWidth, infoheader.biHeight);
+
 
     l_texture = (byte *) malloc(infoheader.biWidth * infoheader.biHeight * 4);
     memset(l_texture, 0, infoheader.biWidth * infoheader.biHeight * 4);
@@ -94,7 +94,8 @@ int tex_base_shops,
     tex_base1_1,
     tex_base1_2,
     tex_base_2_0,
-    tex_base_3_0;
+    tex_base_3_0,
+    tex_center_pillar_wall;
 
 
 void loadAllBitmap(){
@@ -110,6 +111,8 @@ void loadAllBitmap(){
     tex_base1_2 = loadTexture("base1_2.bmp");
     tex_base_2_0 = loadTexture("base_2_0.bmp");
     tex_base_3_0 = loadTexture("base_3_0.bmp");
+    tex_center_pillar_wall = loadTexture("center_pillar_wall.bmp");
+
 
 }
 

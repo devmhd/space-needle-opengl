@@ -245,3 +245,192 @@ void drawBaseLevel2(){
 
 
 }
+
+
+
+void drawPartBaseRoof(){
+
+ //roofy1
+    for(int angle = -60 ; angle < -30; angle+= 15 ){
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(-4.27 / tan(toRadian(angle)), -4.27, 14.81);
+        glVertex3f(15.7 * cos(toRadian(angle)) , 15.7 * sin(toRadian(angle)), 14.81);
+        glVertex3f(15.7 * cos(toRadian(angle+15)) , 15.7 * sin(toRadian(angle+15)), 14.81);
+        glVertex3f(-4.27 / tan(toRadian(angle+15)), -4.27, 14.81);
+
+
+    glEnd();
+
+    }
+
+    //roofx
+    for(int angle = -30 ; angle < 30; angle+= 15 ){
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(7.63, 7.63 * tan(toRadian(angle)), 14.81);
+        glVertex3f(15.7 * cos(toRadian(angle)) , 15.7 * sin(toRadian(angle)), 14.81);
+        glVertex3f(15.7 * cos(toRadian(angle+15)) , 15.7 * sin(toRadian(angle+15)), 14.81);
+        glVertex3f(7.63, 7.63 * tan(toRadian(angle+15)), 14.81);
+
+
+    glEnd();
+
+    }
+
+    //roofy2
+    for(int angle = 30 ; angle < 60; angle+= 15 ){
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(4.27 / tan(toRadian(angle)), 4.27, 14.81);
+        glVertex3f(15.7 * cos(toRadian(angle)) , 15.7 * sin(toRadian(angle)), 14.81);
+        glVertex3f(15.7 * cos(toRadian(angle+15)) , 15.7 * sin(toRadian(angle+15)), 14.81);
+        glVertex3f(4.27 / tan(toRadian(angle+15)), 4.27, 14.81);
+
+
+    glEnd();
+
+    }
+
+
+    //inner walls
+
+    applyTexture(tex_center_pillar_wall,1,2,
+
+                 7.63, 7.63 * tan(toRadian(30)), 0,
+                 7.63, 7.63 * tan(toRadian(-30)),0,
+                 7.63, 7.63 * tan(toRadian(-30)),14.81,
+                 7.63, 7.63 * tan(toRadian(30)), 14.81
+                 );
+
+    applyTexture(tex_center_pillar_wall,1,2,
+
+                 -4.27 / tan(toRadian(-60)), -4.27, 0,
+                 -4.27 / tan(toRadian(-30)), -4.27, 0,
+                 -4.27 / tan(toRadian(-30)), -4.27, 14.81,
+                 -4.27 / tan(toRadian(-60)), -4.27, 14.81
+                 );
+
+    applyTexture(tex_center_pillar_wall,1,2,
+
+                 4.27 / tan(toRadian(60)), 4.27, 0,
+                 4.27 / tan(toRadian(30)), 4.27, 0,
+                 4.27 / tan(toRadian(30)), 4.27, 14.81,
+                 4.27 / tan(toRadian(60)), 4.27, 14.81
+                 );
+
+
+    // center pillar
+    applyTexture(tex_center_pillar_wall, 2,25,
+                 2.5,4.27,0,
+                 2.5,-4.27,0,
+                 2.5,-4.27,150,
+                 2.5,4.27,150
+                 );
+
+}
+
+void drawAnglePillars(){
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, 1.98, 0);
+        glVertex3f(19.44, 3.21, 0);
+        glVertex3f(4.95, 3.21, 82.5);
+        glVertex3f(4.95, 1.98, 82.5);
+
+
+    glEnd();
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, -1.98, 0);
+        glVertex3f(19.44, -3.21, 0);
+        glVertex3f(4.95, -3.21, 82.5);
+        glVertex3f(4.95, -1.98, 82.5);
+
+
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(21.81, 1.98, 0);
+        glVertex3f(21.81, 3.21, 0);
+        glVertex3f(7.32, 3.21, 82.5);
+        glVertex3f(7.32, 1.98, 82.5);
+
+
+    glEnd();
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(21.81, -1.98, 0);
+        glVertex3f(21.81, -3.21, 0);
+        glVertex3f(7.32, -3.21, 82.5);
+        glVertex3f(7.32, -1.98, 82.5);
+
+
+    glEnd();
+
+
+
+
+
+
+
+
+
+     glBegin(GL_QUADS);
+
+        glVertex3f(19.44, 3.21, 0);
+        glVertex3f(21.81, 3.21, 0);
+        glVertex3f(7.32, 3.21, 82.5);
+        glVertex3f(4.95, 3.21, 82.5);
+
+
+    glEnd();
+
+     glBegin(GL_QUADS);
+
+        glVertex3f(19.44, 1.98, 0);
+        glVertex3f(21.81, 1.98, 0);
+        glVertex3f(7.32, 1.98, 82.5);
+        glVertex3f(4.95, 1.98, 82.5);
+
+
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, -1.98, 0);
+        glVertex3f(21.81, -1.98, 0);
+        glVertex3f(7.32, -1.98, 82.5);
+        glVertex3f(4.95, -1.98, 82.5);
+
+
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, -3.21, 0);
+        glVertex3f(21.81, -3.21, 0);
+        glVertex3f(7.32, -3.21, 82.5);
+        glVertex3f(4.95, -3.21, 82.5);
+
+
+    glEnd();
+
+
+
+
+
+
+
+
+}
