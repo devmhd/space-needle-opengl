@@ -95,7 +95,10 @@ int tex_base_shops,
     tex_base1_2,
     tex_base_2_0,
     tex_base_3_0,
-    tex_center_pillar_wall;
+    tex_center_pillar_wall,
+    tex_concrete,
+    tex_fchamber_wall,
+    tex_fchamber_ext_base;
 
 
 void loadAllBitmap(){
@@ -112,6 +115,9 @@ void loadAllBitmap(){
     tex_base_2_0 = loadTexture("base_2_0.bmp");
     tex_base_3_0 = loadTexture("base_3_0.bmp");
     tex_center_pillar_wall = loadTexture("center_pillar_wall.bmp");
+    tex_concrete = loadTexture("concrete.bmp");
+    tex_fchamber_wall = loadTexture("fchamber_window.bmp");
+    tex_fchamber_ext_base = loadTexture("fchamber_ext_base.bmp");
 
 
 }

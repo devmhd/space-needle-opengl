@@ -5,6 +5,7 @@
 
 #include<GL/glut.h>
 
+double theAmount = 11;
 
 #include "headers/utils.h"
 
@@ -87,6 +88,17 @@ void keyboardListener(unsigned char key, int x,int y){
 		case '1':
 			drawgrid=1-drawgrid;
 			break;
+
+        case 'q':
+			theAmount += 0.1;
+			printf("amount %f\n", theAmount);
+			break;
+
+        case 'w':
+			theAmount -= 0.1;
+			printf("amount %f\n", theAmount);
+			break;
+
 
 		default:
 			break;
@@ -176,7 +188,7 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(40*cos(cameraAngle), 40*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
+	gluLookAt(40*cos(cameraAngle), 40*sin(cameraAngle), cameraHeight,		0,0,25,		0,0,1);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
 //	positionCamera();
@@ -234,6 +246,23 @@ void display(){
         drawAnglePillars();
         glRotatef(120,0,0,1);
         drawAnglePillars();
+     glPopMatrix();
+
+
+
+     glPushMatrix();
+
+        glTranslatef(0,0,25.07);
+
+        drawPartFloatingChamber();
+        glRotatef(120,0,0,1);
+
+        drawPartFloatingChamber();
+        glRotatef(120,0,0,1);
+
+        drawPartFloatingChamber();
+
+
      glPopMatrix();
 
 

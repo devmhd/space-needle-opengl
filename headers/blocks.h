@@ -335,12 +335,15 @@ void drawPartBaseRoof(){
 
 void drawAnglePillars(){
 
+
+    // pillar angle is 81.7
+
     glBegin(GL_QUADS);
 
         glVertex3f(19.44, 1.98, 0);
         glVertex3f(19.44, 3.21, 0);
-        glVertex3f(4.95, 3.21, 82.5);
-        glVertex3f(4.95, 1.98, 82.5);
+        glVertex3f(7.404, 3.21, 82.5);
+        glVertex3f(7.404, 1.98, 82.5);
 
 
     glEnd();
@@ -349,8 +352,8 @@ void drawAnglePillars(){
 
         glVertex3f(19.44, -1.98, 0);
         glVertex3f(19.44, -3.21, 0);
-        glVertex3f(4.95, -3.21, 82.5);
-        glVertex3f(4.95, -1.98, 82.5);
+        glVertex3f(7.404, -3.21, 82.5);
+        glVertex3f(7.404, -1.98, 82.5);
 
 
     glEnd();
@@ -360,8 +363,8 @@ void drawAnglePillars(){
 
         glVertex3f(21.81, 1.98, 0);
         glVertex3f(21.81, 3.21, 0);
-        glVertex3f(7.32, 3.21, 82.5);
-        glVertex3f(7.32, 1.98, 82.5);
+        glVertex3f(9.774, 3.21, 82.5);
+        glVertex3f(9.774, 1.98, 82.5);
 
 
     glEnd();
@@ -370,8 +373,8 @@ void drawAnglePillars(){
 
         glVertex3f(21.81, -1.98, 0);
         glVertex3f(21.81, -3.21, 0);
-        glVertex3f(7.32, -3.21, 82.5);
-        glVertex3f(7.32, -1.98, 82.5);
+        glVertex3f(9.774, -3.21, 82.5);
+        glVertex3f(9.774, -1.98, 82.5);
 
 
     glEnd();
@@ -388,8 +391,8 @@ void drawAnglePillars(){
 
         glVertex3f(19.44, 3.21, 0);
         glVertex3f(21.81, 3.21, 0);
-        glVertex3f(7.32, 3.21, 82.5);
-        glVertex3f(4.95, 3.21, 82.5);
+        glVertex3f(9.774, 3.21, 82.5);
+        glVertex3f(7.404, 3.21, 82.5);
 
 
     glEnd();
@@ -398,8 +401,8 @@ void drawAnglePillars(){
 
         glVertex3f(19.44, 1.98, 0);
         glVertex3f(21.81, 1.98, 0);
-        glVertex3f(7.32, 1.98, 82.5);
-        glVertex3f(4.95, 1.98, 82.5);
+        glVertex3f(9.774, 1.98, 82.5);
+        glVertex3f(7.404, 1.98, 82.5);
 
 
     glEnd();
@@ -409,8 +412,8 @@ void drawAnglePillars(){
 
         glVertex3f(19.44, -1.98, 0);
         glVertex3f(21.81, -1.98, 0);
-        glVertex3f(7.32, -1.98, 82.5);
-        glVertex3f(4.95, -1.98, 82.5);
+        glVertex3f(9.774, -1.98, 82.5);
+        glVertex3f(7.404, -1.98, 82.5);
 
 
     glEnd();
@@ -420,16 +423,221 @@ void drawAnglePillars(){
 
         glVertex3f(19.44, -3.21, 0);
         glVertex3f(21.81, -3.21, 0);
-        glVertex3f(7.32, -3.21, 82.5);
-        glVertex3f(4.95, -3.21, 82.5);
+        glVertex3f(9.774, -3.21, 82.5);
+        glVertex3f(7.404, -3.21, 82.5);
 
 
     glEnd();
 
 
+}
+
+void drawPartFloatingChamber(){
+
+    //lowest level
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                7.63, 4.27, 0,
+                2.5, 4.27,0
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0,
+                7.63, -4.27, 0,
+                2.5, -4.27,0
+
+                 );
+
+     applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                7.63, 4.27, 0,
+               7.63, -4.27, 0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0
+
+                 );
 
 
+    //mid level
+    applyTexture(tex_concrete, 1,1,
 
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                7.63, 4.27, 1.83,
+                2.5, 4.27,1.83
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                7.63, -4.27, 1.83,
+                2.5, -4.27,1.83
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                7.63, 4.27, 1.83,
+               7.63, -4.27, 1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83
+
+                 );
+
+    // sides
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 1.83
+                  );
+
+    applyTexture(tex_concrete, 1,6,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83
+                     );
+
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 1.83
+                  );
+
+
+    //roof
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                7.63, 4.27, 6.93,
+                2.5, 4.27,6.93
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93,
+                7.63, -4.27, 6.93,
+                2.5, -4.27,6.93
+
+                 );
+
+     applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                7.63, 4.27, 6.93,
+                7.63, -4.27, 6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93
+                 );
+
+
+    //extension roof
+    applyTexture(tex_concrete, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                 15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93
+                 );
+
+     //extension base
+    applyTexture(tex_fchamber_ext_base, 4,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                 15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                  15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83
+
+
+                 );
+
+
+    // extension walls/windows
+    applyTexture(tex_fchamber_wall, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93
+                 );
+
+     applyTexture(tex_fchamber_wall, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93
+                 );
+
+    applyTexture(tex_fchamber_wall, 1,1,
+
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93
+                 );
+
+    //fill gap between pillars
+    applyTexture(tex_fchamber_wall, 1,1,
+
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) , 15.8 * sin(toRadian(60)), 6.93
+                  );
+
+    applyTexture(tex_fchamber_wall, 1,1,
+
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),6.93,
+                15.8 * cos(toRadian(60)) , -15.8 * sin(toRadian(60)), 6.93
+                  );
+
+
+    //inner walls
+    applyTexture(tex_concrete, 1,1,
+
+                7.63, 4.27, 0,
+                2.5, 4.27,0,
+                2.5, 4.27,6.93,
+                7.63, 4.27, 6.93
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                7.63, -4.27, 0,
+                2.5, -4.27,0,
+                2.5, -4.27,6.93,
+                7.63, -4.27, 6.93
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+
+                7.63, 4.27, 0,
+                7.63, -4.27, 0,
+                7.63, -4.27, 6.93,
+                7.63, 4.27, 6.93
+
+
+                 );
 
 
 
