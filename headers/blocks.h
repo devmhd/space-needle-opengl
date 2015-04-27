@@ -558,8 +558,8 @@ void drawPartFloatingChamber(){
     applyTexture(tex_fchamber_ext_base, 4,1,
 
                 15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
-                 15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
-                  15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, -15.8 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
                 15.8 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)) + 4.82, 15.8 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83
 
 
@@ -638,6 +638,66 @@ void drawPartFloatingChamber(){
 
 
                  );
+
+
+    glPushMatrix();
+
+        glTranslatef(10.68, -12.078, 1.83);
+
+        for(int i=0; i<9; ++i){
+
+
+            applyTexture(tex_metal, 1,1,
+
+                     0,0,0,
+                     5.01,0,0,
+                     5.01,0,-0.15,
+                     0,0,-1.84
+                     );
+
+        applyTexture(tex_metal, 1,1,
+
+                     0,0.15,0,
+                     5.01,0.15,0,
+                     5.01,0.15,-0.15,
+                     0,0.15,-1.84
+                     );
+
+
+        applyTexture(tex_metal, 1,1,
+
+                     5.01,0,0,
+                     5.01,0,-0.15,
+                     5.01,0.15,-0.15,
+                     5.01,0.15,0
+                     );
+
+        applyTexture(tex_metal, 1,1,
+                    0,0,0,
+                     5.01,0,0,
+                     5.01,0.15,0,
+                     0,0.15,0
+                     );
+
+        applyTexture(tex_metal, 1,1,
+
+                     0,0,-1.84,
+                     5.01,0,-0.15,
+                     5.01,0.15,-0.15,
+                     0,0.15,-1.84
+                     );
+
+        glTranslatef(0,3.00075,0);
+
+        }
+
+
+
+
+
+        //
+
+    glPopMatrix();
 
 
 
