@@ -101,7 +101,7 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(25*cos(cameraAngle), 25*sin(cameraAngle), cameraHeight,		0,0,144,		0,0,1);
+	gluLookAt(35*cos(cameraAngle), 35*sin(cameraAngle), cameraHeight,		0,0,144,		0,0,1);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
 //	positionCamera();
@@ -231,7 +231,7 @@ void init(){
 	//codes for initialization
 	drawgrid=1;
 	drawaxes=1;
-	cameraHeight=100.0;
+	cameraHeight=144.0;
 	cameraAngle=1.0;
 	angle=0;
 

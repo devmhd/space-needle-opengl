@@ -764,7 +764,7 @@ void drawPartFloatingChamber(){
         for(int i=0; i<9; ++i){
 
 
-            applyTexture(tex_metal, 1,1,
+        applyTexture(tex_metal, 1,1,
 
                      0,0,0,
                      5.01,0,0,
@@ -980,6 +980,7 @@ void drawPartCrown(){
 
 
     //span ring
+
     //base
     applyTexture(tex_black, 1,1,
 
@@ -990,5 +991,146 @@ void drawPartCrown(){
                 2 * cos(toRadian(8)), 2 * sin(toRadian(8)), 0.71
 
                  );
+
+    //outer wall
+    applyTexture(tex_black, 1,1,
+
+
+               17.5, 0, 0.71,
+                17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 0.71,
+               17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 2.35,
+                17.5, 0, 2.35
+
+                 );
+
+    //roof
+    applyTexture(tex_concrete, 1,1,
+
+
+                2, 0, 2.35,
+                17.5, 0, 2.35,
+                17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)),2.35,
+                2 * cos(toRadian(8)), 2 * sin(toRadian(8)),2.35
+
+                 );
+
+
+    // small beams
+    glPushMatrix();
+
+        glTranslatef(9.7 + 2.37, 0, 1.7);
+
+
+
+
+        applyTexture(tex_metal, 1,1,
+
+                     0,0,0,
+                     6,0,0,
+                     6,0,-0.95,
+                     0,0,-1.84
+                     );
+
+        applyTexture(tex_metal, 1,1,
+
+                     0,0.15,0,
+                     6,0.15,0,
+                     6,0.15,-0.95,
+                     0,0.15,-1.84
+                     );
+
+         applyTexture(tex_metal, 1,1,
+
+                    6,0,0,
+                     6,0,-0.95,
+                     6,0.15,-0.95,
+                     6,0.15,0
+                     );
+
+        applyTexture(tex_metal, 1,1,
+
+                    6,0,-0.95,
+                     0,0,-1.84,
+                     0,0.15,-1.84,
+                     6,0.15,-0.95
+                     );
+
+        applyTexture(tex_metal, 1,1,
+
+                    0,0,0,
+                     6,0,0,
+                     6,0.15,0,
+                     0,0.15,0
+                     );
+
+    glPopMatrix();
+
+
+    // tilted wall lower floor
+
+    applyTexture(tex_crown_wall_1, 1,1,
+
+                 13.21, 0, 2.35,
+                 13.21 * cos(toRadian(8)), 13.21 * sin(toRadian(8)), 2.35,
+                 17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 2.35 + 5.98,
+                 17.5, 0, 2.35 + 5.98
+
+
+                 );
+
+
+    // outmost floating ring
+    //base
+
+    glPushMatrix();
+
+    glTranslatef(0,0,1.4);
+
+    applyTexture(tex_concrete, 1,1,
+
+
+                20.5, 0, 5,
+                20.5 + 0.9, 0, 5,
+                (20.5 + 0.9) * cos(toRadian(8)), (20.5 + 0.9) * sin(toRadian(8)), 5,
+                (20.5) * cos(toRadian(8)), (20.5) * sin(toRadian(8)), 5
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+
+                20.5, 0, 5.71,
+                20.5 + 0.9, 0, 5.71,
+                (20.5 + 0.9) * cos(toRadian(8)), (20.5 + 0.9) * sin(toRadian(8)), 5.71,
+                (20.5) * cos(toRadian(8)), (20.5) * sin(toRadian(8)), 5.71
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+
+                 20.5 + 0.9, 0, 5,
+                (20.5 + 0.9) * cos(toRadian(8)), (20.5 + 0.9) * sin(toRadian(8)), 5,
+                (20.5 + 0.9) * cos(toRadian(8)), (20.5 + 0.9) * sin(toRadian(8)), 5.71,
+                 20.5 + 0.9, 0, 5.71
+
+                 );
+
+    glPopMatrix();
+
+
+}
+
+
+void drawPipe(double height){
+
+    applyTexture(tex_concrete, 1,1,
+
+                 0.075, 0.075, 0,
+                 -0.075, 0.075, 0,
+                 -0.075, 0.075, height,
+                 0.075, 0.075, height
+                 );
+
 
 }
