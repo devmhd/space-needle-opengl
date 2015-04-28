@@ -338,83 +338,76 @@ void drawAnglePillars(){
 
     // pillar angle is 81.7
 
+
+    // pillar 1
     glBegin(GL_QUADS);
 
         glVertex3f(19.44, 1.98, 0);
         glVertex3f(19.44, 3.21, 0);
-        glVertex3f(7.404, 3.21, 82.5);
-        glVertex3f(7.404, 1.98, 82.5);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), 3.21, 96.6);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), 1.98, 96.6);
 
 
     glEnd();
 
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(2.37 + 19.44, 1.98, 0);
+        glVertex3f(2.37 + 19.44, 3.21, 0);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), 3.21, 96.6);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), 1.98, 96.6);
+
+
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, 3.21, 0);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), 3.21, 96.6);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), 3.21, 96.6);
+        glVertex3f(2.37 + 19.44, 3.21, 0);
+
+
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, 1.98, 0);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), 1.98, 96.6);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), 1.98, 96.6);
+        glVertex3f(2.37 + 19.44, 1.98, 0);
+
+
+    glEnd();
+
+
+
+
+
+
+
+    //pillar 2
     glBegin(GL_QUADS);
 
         glVertex3f(19.44, -1.98, 0);
         glVertex3f(19.44, -3.21, 0);
-        glVertex3f(7.404, -3.21, 82.5);
-        glVertex3f(7.404, -1.98, 82.5);
-
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), -3.21, 96.6);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), -1.98, 96.6);
 
     glEnd();
+
+
 
 
     glBegin(GL_QUADS);
 
-        glVertex3f(21.81, 1.98, 0);
-        glVertex3f(21.81, 3.21, 0);
-        glVertex3f(9.774, 3.21, 82.5);
-        glVertex3f(9.774, 1.98, 82.5);
-
-
-    glEnd();
-
-    glBegin(GL_QUADS);
-
-        glVertex3f(21.81, -1.98, 0);
-        glVertex3f(21.81, -3.21, 0);
-        glVertex3f(9.774, -3.21, 82.5);
-        glVertex3f(9.774, -1.98, 82.5);
-
-
-    glEnd();
-
-
-
-
-
-
-
-
-
-     glBegin(GL_QUADS);
-
-        glVertex3f(19.44, 3.21, 0);
-        glVertex3f(21.81, 3.21, 0);
-        glVertex3f(9.774, 3.21, 82.5);
-        glVertex3f(7.404, 3.21, 82.5);
-
-
-    glEnd();
-
-     glBegin(GL_QUADS);
-
-        glVertex3f(19.44, 1.98, 0);
-        glVertex3f(21.81, 1.98, 0);
-        glVertex3f(9.774, 1.98, 82.5);
-        glVertex3f(7.404, 1.98, 82.5);
-
-
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-
-        glVertex3f(19.44, -1.98, 0);
-        glVertex3f(21.81, -1.98, 0);
-        glVertex3f(9.774, -1.98, 82.5);
-        glVertex3f(7.404, -1.98, 82.5);
-
+        glVertex3f(2.37 + 19.44, -1.98, 0);
+        glVertex3f(2.37 + 19.44, -3.21, 0);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), -3.21, 96.6);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), -1.98, 96.6);
 
     glEnd();
 
@@ -422,14 +415,138 @@ void drawAnglePillars(){
     glBegin(GL_QUADS);
 
         glVertex3f(19.44, -3.21, 0);
-        glVertex3f(21.81, -3.21, 0);
-        glVertex3f(9.774, -3.21, 82.5);
-        glVertex3f(7.404, -3.21, 82.5);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), -3.21, 96.6);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), -3.21, 96.6);
+        glVertex3f(2.37 + 19.44, -3.21, 0);
 
 
     glEnd();
 
 
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44, -1.98, 0);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)), -1.98, 96.6);
+        glVertex3f(2.37 + 19.44 - 96.6/tan(toRadian(81.7)), -1.98, 96.6);
+        glVertex3f(2.37 + 19.44, -1.98, 0);
+
+
+    glEnd();
+
+
+    // fill betwwen pillars
+    glBegin(GL_QUADS);
+
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)) + 1.9, 1.98, 96.6);
+        glVertex3f(19.44 - 85.6/tan(toRadian(81.7)) + 1.9, 1.98, 85.6);
+        glVertex3f(19.44 - 85.6/tan(toRadian(81.7)) + 1.9, -1.98, 85.6);
+        glVertex3f(19.44 - 96.6/tan(toRadian(81.7)) + 1.9, -1.98, 96.6);
+
+    glEnd();
+
+
+
+
+
+}
+
+void drawAnglePillarsUpper(){
+
+
+    // pillar angle 84.4
+
+    glPushMatrix();
+
+        glTranslatef(0,0,96.6);
+
+        // pillar 1
+        glBegin(GL_QUADS);
+
+            glVertex3f(4.2, 1.98, 0);
+            glVertex3f(4.2, 3.21, 0);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), 3.21, 48.35);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), 1.98, 48.35);
+
+        glEnd();
+
+
+        glBegin(GL_QUADS);
+
+            glVertex3f(2.37 + 4.2, 1.98, 0);
+            glVertex3f(2.37 + 4.2, 3.21, 0);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), 3.21, 48.35);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), 1.98, 48.35);
+
+        glEnd();
+
+
+        glBegin(GL_QUADS);
+
+            glVertex3f(4.2, 3.21, 0);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), 3.21, 48.35);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), 3.21, 48.35);
+            glVertex3f(2.37 + 4.2, 3.21, 0);
+
+        glEnd();
+
+
+        glBegin(GL_QUADS);
+
+            glVertex3f(4.2, 1.98, 0);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), 1.98, 48.35);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), 1.98, 48.35);
+            glVertex3f(2.37 + 4.2, 1.98, 0);
+
+        glEnd();
+
+
+
+
+
+        // pillar 2
+        glBegin(GL_QUADS);
+
+            glVertex3f(4.2, -1.98, 0);
+            glVertex3f(4.2, -3.21, 0);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), -3.21, 48.35);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), -1.98, 48.35);
+
+        glEnd();
+
+
+        glBegin(GL_QUADS);
+
+            glVertex3f(2.37 + 4.2, -1.98, 0);
+            glVertex3f(2.37 + 4.2, -3.21, 0);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), -3.21, 48.35);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), -1.98, 48.35);
+
+        glEnd();
+
+
+        glBegin(GL_QUADS);
+
+            glVertex3f(4.2, -3.21, 0);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), -3.21, 48.35);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), -3.21, 48.35);
+            glVertex3f(2.37 + 4.2, -3.21, 0);
+
+        glEnd();
+
+
+        glBegin(GL_QUADS);
+
+            glVertex3f(4.2, -1.98, 0);
+            glVertex3f(4.2 + 48.35/tan(toRadian(84.4)), -1.98, 48.35);
+            glVertex3f(2.37 + 4.2 + 48.35/tan(toRadian(84.4)), -1.98, 48.35);
+            glVertex3f(2.37 + 4.2, -1.98, 0);
+
+        glEnd();
+
+
+
+
+    glPopMatrix();
 }
 
 void drawPartFloatingChamber(){
@@ -700,5 +817,178 @@ void drawPartFloatingChamber(){
     glPopMatrix();
 
 
+
+}
+
+void drawPartFloatingBeams(){
+
+
+    //lowest level
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) , 11.0 * sin(toRadian(60)), 0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                7.63, 4.27, 0,
+                2.5, 4.27,0
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) , -11.0 * sin(toRadian(60)), 0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0,
+                7.63, -4.27, 0,
+                2.5, -4.27,0
+
+                 );
+
+     applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                7.63, 4.27, 0,
+               7.63, -4.27, 0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0
+
+                 );
+
+
+    //mid level
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) , 11.0 * sin(toRadian(60)), 1.83,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                7.63, 4.27, 1.83,
+                2.5, 4.27,1.83
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) , -11.0 * sin(toRadian(60)), 1.83,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                7.63, -4.27, 1.83,
+                2.5, -4.27,1.83
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                7.63, 4.27, 1.83,
+               7.63, -4.27, 1.83,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83
+
+                 );
+
+    // sides
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) , 11.0 * sin(toRadian(60)), 0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83,
+                11.0 * cos(toRadian(60)) , 11.0 * sin(toRadian(60)), 1.83
+                  );
+
+    applyTexture(tex_concrete, 1,6,
+
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), 11.0 * sin(toRadian(60)) - 3.21 * sin(toRadian(30)),1.83
+                     );
+
+    applyTexture(tex_concrete, 1,1,
+
+                11.0 * cos(toRadian(60)) , -11.0 * sin(toRadian(60)), 0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),0,
+                11.0 * cos(toRadian(60)) + 3.21 * cos(toRadian(30)), -11.0 * sin(toRadian(60)) + 3.21 * sin(toRadian(30)),1.83,
+                11.0 * cos(toRadian(60)) , -11.0 * sin(toRadian(60)), 1.83
+                  );
+
+
+
+    //inner walls
+    applyTexture(tex_concrete, 1,1,
+
+                7.63, 4.27, 0,
+                2.5, 4.27,0,
+                2.5, 4.27,1.83,
+                7.63, 4.27, 1.83
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                7.63, -4.27, 0,
+                2.5, -4.27,0,
+                2.5, -4.27,1.83,
+                7.63, -4.27, 1.83
+
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+
+                7.63, 4.27, 0,
+                7.63, -4.27, 0,
+                7.63, -4.27, 1.83,
+                7.63, 4.27, 1.83
+
+
+                 );
+
+}
+
+
+void drawPartCrown(){
+
+
+    //lowest ring
+
+    //base
+    applyTexture(tex_concrete, 1,1,
+
+
+                9.7, 0, 0,
+                9.7 + 2.37, 0, 0,
+                (9.7 + 2.37) * cos(toRadian(8)), (9.7 + 2.37) * sin(toRadian(8)), 0,
+                (9.7) * cos(toRadian(8)), (9.7) * sin(toRadian(8)), 0
+
+                 );
+
+    // inner wall
+    applyTexture(tex_concrete, 1,1,
+
+
+                9.7, 0, 0,
+                (9.7) * cos(toRadian(8)), (9.7 + 2.37) * sin(toRadian(8)), 0,
+                (9.7) * cos(toRadian(8)), (9.7 + 2.37) * sin(toRadian(8)), 0.71,
+                9.7, 0, 0.71
+
+                 );
+
+    // outer wall
+    applyTexture(tex_concrete, 1,1,
+
+
+                9.7 + 2.37, 0, 0,
+                (9.7 + 2.37) * cos(toRadian(8)), (9.7 + 2.37) * sin(toRadian(8)), 0,
+                (9.7 + 2.37) * cos(toRadian(8)), (9.7 + 2.37) * sin(toRadian(8)), 0.71,
+                9.7 + 2.37, 0, 0.71
+
+                 );
+
+
+    //span ring
+    //base
+    applyTexture(tex_black, 1,1,
+
+
+                2, 0, 0.71,
+                17.5, 0, 0.71,
+                17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 0.71,
+                2 * cos(toRadian(8)), 2 * sin(toRadian(8)), 0.71
+
+                 );
 
 }

@@ -99,7 +99,8 @@ int tex_base_shops,
     tex_concrete,
     tex_fchamber_wall,
     tex_fchamber_ext_base,
-    tex_metal;
+    tex_metal,
+    tex_black;
 
 
 void loadAllBitmap(){
@@ -120,6 +121,7 @@ void loadAllBitmap(){
     tex_fchamber_wall = loadTexture("fchamber_window.bmp");
     tex_fchamber_ext_base = loadTexture("fchamber_ext_base.bmp");
     tex_metal = loadTexture("metal.bmp");
+    tex_black = loadTexture("black.bmp");
 
 
 }

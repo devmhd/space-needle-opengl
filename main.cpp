@@ -5,22 +5,16 @@
 
 #include<GL/glut.h>
 
-double theAmount = 11;
+double theAmount = 0;
 
 #include "headers/utils.h"
+#include "headers/listeners.h"
+
 
 #include "headers/camera.h"
 #include "headers/texture.h"
 #include "headers/blocks.h"
 
-
-
-double cameraHeight;
-double cameraAngle;
-int drawgrid;
-int drawaxes;
-double angle;
-double zRotation;
 
 
 void drawAxes()
@@ -82,87 +76,6 @@ void drawGrid()
 
 
 
-void keyboardListener(unsigned char key, int x,int y){
-	switch(key){
-
-		case '1':
-			drawgrid=1-drawgrid;
-			break;
-
-        case 'q':
-			theAmount += 0.1;
-			printf("amount %f\n", theAmount);
-			break;
-
-        case 'w':
-			theAmount -= 0.1;
-			printf("amount %f\n", theAmount);
-			break;
-
-
-		default:
-			break;
-	}
-}
-
-
-void specialKeyListener(int key, int x,int y){
-	switch(key){
-		case GLUT_KEY_DOWN:		//down arrow key
-			cameraHeight -= 3.0;
-			break;
-		case GLUT_KEY_UP:		// up arrow key
-			cameraHeight += 3.0;
-			break;
-
-		case GLUT_KEY_RIGHT:
-			cameraAngle += 0.03;
-			break;
-		case GLUT_KEY_LEFT:
-			cameraAngle -= 0.03;
-			break;
-
-		case GLUT_KEY_PAGE_UP:
-		    zRotation += 1;
-			break;
-		case GLUT_KEY_PAGE_DOWN:
-		     zRotation -= 1;
-			break;
-
-		case GLUT_KEY_INSERT:
-			break;
-
-		case GLUT_KEY_HOME:
-			break;
-		case GLUT_KEY_END:
-			break;
-
-		default:
-			break;
-	}
-}
-
-
-void mouseListener(int button, int state, int x, int y){	//x, y is the x-y of the screen (2D)
-	switch(button){
-		case GLUT_LEFT_BUTTON:
-			if(state == GLUT_DOWN){		// 2 times?? in ONE click? -- solution is checking DOWN or UP
-				drawaxes=1-drawaxes;
-			}
-			break;
-
-		case GLUT_RIGHT_BUTTON:
-			//........
-			break;
-
-		case GLUT_MIDDLE_BUTTON:
-			//........
-			break;
-
-		default:
-			break;
-	}
-}
 
 
 
@@ -188,7 +101,7 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(25*cos(cameraAngle), 25*sin(cameraAngle), cameraHeight,		0,0,25,		0,0,1);
+	gluLookAt(25*cos(cameraAngle), 25*sin(cameraAngle), cameraHeight,		0,0,144,		0,0,1);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
 //	positionCamera();
@@ -242,10 +155,13 @@ void display(){
 
         glRotatef(60,0,0,1);
         drawAnglePillars();
+        drawAnglePillarsUpper();
         glRotatef(120,0,0,1);
         drawAnglePillars();
+        drawAnglePillarsUpper();
         glRotatef(120,0,0,1);
         drawAnglePillars();
+        drawAnglePillarsUpper();
      glPopMatrix();
 
 
@@ -264,6 +180,40 @@ void display(){
 
 
      glPopMatrix();
+
+
+     glPushMatrix();
+
+        glTranslatef(0,0,57.82);
+
+        drawPartFloatingBeams();
+        glRotatef(120,0,0,1);
+
+        drawPartFloatingBeams();
+        glRotatef(120,0,0,1);
+
+        drawPartFloatingBeams();
+
+
+     glPopMatrix();
+
+
+     // The crown
+
+     glPushMatrix();
+
+        glTranslatef(0,0,144.95);
+
+        for(double angle = 0; angle < 360; angle += 7.5){
+
+            drawPartCrown();
+            glRotatef(7.5,0,0,1);
+
+        }
+
+
+     glPopMatrix();
+
 
 
 
