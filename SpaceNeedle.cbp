@@ -50,6 +50,7 @@
 		<Unit filename="headers/camera.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="headers/listeners.h" />
 		<Unit filename="headers/texture.h" />
 		<Unit filename="headers/utils.h" />
 		<Unit filename="main.cpp" />

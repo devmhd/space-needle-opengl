@@ -1,42 +1,8 @@
-double cameraEyeX,
- cameraEyeY,
- cameraEyeZ,
- cameraCenterX,
- cameraCenterY,
- cameraCenterZ,
- cameraUpX,
- cameraUpY,
- cameraUpZ;
+// actual vector representing the camera's direction
+float ex=0,ey=30,ez=150;
+// XZ position of the camera
+float cx=0,cy=0,cz=150;
+float upx=0,upy=0,upz=1;
+float camera_rot=PI;
 
 
-
-void initCamera(){
-
-    cameraEyeX = cameraEyeY = cameraEyeZ = 100;
-    cameraCenterX = cameraCenterY = cameraCenterZ = 0;
-
-    cameraUpX = cameraUpY = 0;
-    cameraUpZ = 1;
-
-}
-
-void positionCamera(){  // called in display
-
-
-    gluLookAt(
-                cameraEyeX,
-                cameraEyeY,
-                cameraEyeZ,
-
-                cameraCenterX,
-                cameraCenterY,
-                cameraCenterZ,
-
-                cameraUpX,
-                cameraUpY,
-                cameraUpZ
-
-
-                );
-
-}

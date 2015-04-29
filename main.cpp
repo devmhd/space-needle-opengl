@@ -8,10 +8,11 @@
 double theAmount = 0;
 
 #include "headers/utils.h"
-#include "headers/listeners.h"
+
 
 
 #include "headers/camera.h"
+#include "headers/listeners.h"
 #include "headers/texture.h"
 #include "headers/blocks.h"
 
@@ -101,7 +102,7 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(35*cos(cameraAngle), 35*sin(cameraAngle), cameraHeight,		0,0,144,		0,0,1);
+	gluLookAt(ex,ey,ez,	cx,cy,cz, upx,upy,upz);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
 //	positionCamera();
@@ -216,6 +217,10 @@ void display(){
 
 
 
+     drawPipe(20);
+
+
+
 
 	//ADD this line in the end --- if you use double buffer (i.e. GL_DOUBLE)
 	glutSwapBuffers();
@@ -279,7 +284,7 @@ int main(int argc, char **argv){
 
 	loadAllBitmap();
 
-	initCamera();
+//	initCamera();
 
 	glutMainLoop();		//The main loop of OpenGL
 

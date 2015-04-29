@@ -940,6 +940,45 @@ void drawPartFloatingBeams(){
 }
 
 
+void drawPipe(double height){
+
+    applyTexture(tex_concrete, 1,1,
+
+                 0.075, 0.075, 0,
+                 -0.075, 0.075, 0,
+                 -0.075, 0.075, height,
+                 0.075, 0.075, height
+                 );
+
+     applyTexture(tex_concrete, 1,1,
+
+                 0.075, 0.075, 0,
+                 0.075, -0.075, 0,
+                 0.075, -0.075, height,
+                 0.075, 0.075, height
+                 );
+
+    applyTexture(tex_concrete, 1,1,
+
+                 0.075, -0.075, 0,
+                 -0.075, -0.075, 0,
+                 -0.075, -0.075, height,
+                 0.075, -0.075, height
+                 );
+
+
+    applyTexture(tex_concrete, 1,1,
+
+                 -0.075, 0.075, 0,
+                 -0.075, -0.075, 0,
+                 -0.075, -0.075, height,
+                 -0.075, 0.075, height
+                 );
+
+
+}
+
+
 void drawPartCrown(){
 
 
@@ -1082,6 +1121,8 @@ void drawPartCrown(){
     // outmost floating ring
     //base
 
+
+
     glPushMatrix();
 
     glTranslatef(0,0,1.4);
@@ -1119,18 +1160,82 @@ void drawPartCrown(){
     glPopMatrix();
 
 
-}
 
+    // tilted wall floor roof
+     applyTexture(tex_concrete, 1,1,
 
-void drawPipe(double height){
+                 15.12, 0, 2.35 + 5.98,
+                 17.5, 0, 2.35 + 5.98,
+                 17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 2.35 + 5.98,
+                 15.12 * cos(toRadian(8)), 15.12 * sin(toRadian(8)), 2.35 + 5.98
+                 );
 
-    applyTexture(tex_concrete, 1,1,
+    // upper floor wall
+     applyTexture(tex_crown_wall_2, 1,1,
 
-                 0.075, 0.075, 0,
-                 -0.075, 0.075, 0,
-                 -0.075, 0.075, height,
-                 0.075, 0.075, height
+                 15.12, 0, 8.33,
+                 15.12 * cos(toRadian(8)), 15.12* sin(toRadian(8)), 8.33,
+                 15.12 * cos(toRadian(8)), 15.12* sin(toRadian(8)), 8.33 + 4.15,
+                 15.12, 0, 8.33 + 4.15
+                 );
+
+     // top floor roof
+     applyTexture(tex_concrete, 1,1,
+
+                 15.12, 0, 8.33 + 4.15,
+                 17.5, 0, 8.33 + 4.15,
+                 17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 8.33 + 4.15,
+                 15.12 * cos(toRadian(8)), 15.12 * sin(toRadian(8)), 8.33 + 4.15
+                 );
+
+     // top floor roof wall
+     applyTexture(tex_concrete, 1,1,
+
+                 17.5, 0, 8.33 + 4.15,
+                 17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 8.33 + 4.15,
+                 17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 8.33 + 4.15 + 0.4,
+                  17.5, 0, 8.33 + 4.15 + 0.4
                  );
 
 
+
+    // top gombuj
+     applyTexture(tex_gombuj, 1,1,
+
+                 17.5, 0, 12.88,
+                 17.5 * cos(toRadian(8)), 17.5 * sin(toRadian(8)), 12.88,
+                 5 * cos(toRadian(8)), 5 * sin(toRadian(8)), 16.88,
+                 5, 0, 16.88
+                 );
+
+
+    // pipes
+    glPushMatrix();
+
+        glTranslatef(20.5,0,6.5);
+
+        glRotatef(-112.4,0,1,0);
+        drawPipe(5);
+
+
+        glRotatef(51.5,0,1,0);
+        drawPipe(3.6);
+
+        glTranslatef(0,0,3.6);
+
+        glRotatef(71.5,0,1,0);
+        drawPipe(3.3);
+
+        glTranslatef(0,0,3.3);
+
+        glRotatef(-32.8,0,1,0);
+        drawPipe(1.4);
+
+
+    glPopMatrix();
+
+
 }
+
+
+
