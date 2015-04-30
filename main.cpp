@@ -7,14 +7,86 @@
 
 double theAmount = 0;
 
+
 #include "headers/utils.h"
 
 
-
-#include "headers/camera.h"
-#include "headers/listeners.h"
 #include "headers/texture.h"
 #include "headers/blocks.h"
+#include "headers/camera.hpp"
+#include "headers/vector.hpp"
+
+Camera cam(Vector(200, 200, 200), Vector(0,0 , 0), Vector(0, 0, 1));
+
+
+
+
+
+
+
+bool flagDiffuseLightColor = true;
+float Diffuse_Light_angle = 0 ;
+
+#include "headers/listeners.h"
+
+void setDiffuseLight()
+{
+	//Property Set
+	GLfloat unset[] = { 0, 0, 0, 1 };
+	GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };
+	GLfloat mat_diffuse[] = { 1.0, 1.0, 1.0, 1.0 };
+	//Not requied for the code
+	GLfloat mat_specular[] = { 1, 1, 1, 1.0 };
+	GLfloat low_shininess[] = { 5.0 };
+	GLfloat mid_shininess[] = { 50.0 };
+	GLfloat high_shininess[] = { 100.0 };
+
+	if(flagDiffuseLightColor){
+		GLfloat diffusePoint[] = { 0.0, 0.0, 1.0,1.0 };
+		glLightfv(GL_LIGHT1, GL_DIFFUSE, diffusePoint);
+		GLfloat light_emission[] = { 0.0, 0.0, 1.0, 0.0 };
+		///material property of reflect
+		glMaterialfv(GL_FRONT, GL_EMISSION, light_emission);
+	}else{
+		GLfloat diffusePoint[] = { 1.0, 1.0, 1.0,1.0 };
+		glLightfv(GL_LIGHT1, GL_DIFFUSE, diffusePoint);
+		GLfloat light_emission[] = { 1.0, 1.0, 1.0, 0.0 };
+		glMaterialfv(GL_FRONT, GL_EMISSION, light_emission);
+	}
+
+	//Rotating diffuse light position
+	GLfloat position[] = { 55.0 * cos(Diffuse_Light_angle), 55.0
+			* sin(Diffuse_Light_angle), 15, 1.0 };
+
+	//light 1 position
+	glLightfv(GL_LIGHT1, GL_POSITION, position);
+	glEnable(GL_LIGHT1);
+	glPushMatrix();
+	glTranslatef(70 * cos(Diffuse_Light_angle), -55.0 * sin(Diffuse_Light_angle),100);
+	glutSolidSphere(4, 50, 50);
+	glPopMatrix();
+	/// unset shinnyness
+	glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
+	glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+	glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
+	glMaterialfv(GL_FRONT, GL_EMISSION, unset);
+
+
+}
+
+void setLight()
+{
+	glShadeModel(GL_SMOOTH);
+	glEnable(GL_NORMALIZE);
+	glEnable(GL_DEPTH_TEST);
+	// Global ambient
+	GLfloat global_ambient[] = { 1, 1, 1, 1.0 };
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient);
+	//Lighting enable
+	 glEnable(GL_LIGHTING);
+
+}
 
 
 
@@ -91,10 +163,10 @@ void display(){
 	/ set-up camera here
 	********************/
 	//load the correct matrix -- MODEL-VIEW matrix
-	glMatrixMode(GL_MODELVIEW);
+//	glMatrixMode(GL_MODELVIEW);
 
 	//initialize the matrix
-	glLoadIdentity();
+//	glLoadIdentity();
 
 	//now give three info
 	//1. where is the camera (viewer)?
@@ -102,14 +174,16 @@ void display(){
 	//3. Which direction is the camera's UP direction?
 
 	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	gluLookAt(ex,ey,ez,	cx,cy,cz, upx,upy,upz);
+//	gluLookAt(ex,ey,ez,	cx,cy,cz, upx,upy,upz);
 	//gluLookAt(0,-1,150,	0,0,0,	0,0,1);
 
 //	positionCamera();
 
 
 	//again select MODEL-VIEW
-	glMatrixMode(GL_MODELVIEW);
+//	glMatrixMode(GL_MODELVIEW);
+
+    setDiffuseLight();
 
 
 	/****************************
@@ -217,17 +291,17 @@ void display(){
 
 
 
-     drawPipe(20);
+     drawPipe(230 - 47.8);
 
 
 
-
+    glFlush();
 	//ADD this line in the end --- if you use double buffer (i.e. GL_DOUBLE)
 	glutSwapBuffers();
 }
 
 void animate(){
-	angle+=0.05;
+	//angle+=0.05;
 	//codes for any changes in Models, Camera
 	glutPostRedisplay();
 }
@@ -236,14 +310,16 @@ void init(){
 	//codes for initialization
 	drawgrid=1;
 	drawaxes=1;
-	cameraHeight=144.0;
-	cameraAngle=1.0;
+//	cameraHeight=144.0;
+//	cameraAngle=1.0;
 	angle=0;
 
 	zRotation = 0.0;
 
 	//clear the screen
 	glClearColor(0,0,0,0);
+
+	setLight();
 
 	/************************
 	/ set-up projection here
@@ -281,10 +357,11 @@ int main(int argc, char **argv){
 	glutSpecialFunc(specialKeyListener);
 	glutMouseFunc(mouseListener);
 
-
 	loadAllBitmap();
 
 //	initCamera();
+
+    cam.setMatrix();
 
 	glutMainLoop();		//The main loop of OpenGL
 

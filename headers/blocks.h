@@ -1209,6 +1209,37 @@ void drawPartCrown(){
                  );
 
 
+    //  gombuj top 1
+     applyTexture(tex_gombuj, 1,1,
+
+                 2.5, 0, 16.88 + 2.5,
+                 2.5 * cos(toRadian(8)), 2.5 * sin(toRadian(8)), 16.88 + 2.5,
+                 5 * cos(toRadian(8)), 5 * sin(toRadian(8)), 16.88,
+                 5, 0, 16.88
+                 );
+
+
+    //  gombuj top 2
+     applyTexture(tex_gombuj, 1,1,
+
+                 5, 0, 16.88 + 5,
+                 5 * cos(toRadian(8)), 5 * sin(toRadian(8)), 16.88 + 5,
+                 2.5 * cos(toRadian(8)), 2.5 * sin(toRadian(8)), 16.88,
+                 2.5, 0, 16.88
+                 );
+
+    //  gombuj top roof
+     applyTexture(tex_gombuj, 1,1,
+
+                 0, 0, 16.88 + 5,
+                 0, 0, 16.88 + 5,
+                 5 * cos(toRadian(8)), 5 * sin(toRadian(8)), 16.88 + 5,
+                 5, 0, 16.88 + 5
+                 );
+
+
+
+
     // pipes
     glPushMatrix();
 
